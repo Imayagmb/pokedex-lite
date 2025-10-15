@@ -11,13 +11,6 @@ Uma aplicação React + TypeScript moderna para explorar o mundo dos Pokémon, u
 - **Barras de Status**: Atributos apresentados em barras horizontais com valores numéricos
 - **Carregamento Progressivo**: Navegue por páginas de Pokémon com botão "Carregar Mais"
 
-### Experiência do Usuário
-- Design responsivo que se adapta a todos os dispositivos (mobile-first)
-- Loading skeletons durante carregamento
-- Estados de erro e páginas vazias bem definidos
-- Animações suaves e pequenas interações
-- Paleta de cores baseada nos tipos oficiais dos Pokémon
-
 ---
 
-Desenvolvido por Mayara Monteiro usando React, TypeScript e PokéAPI.
+Desenvolvido por Mayara Monteiro.
