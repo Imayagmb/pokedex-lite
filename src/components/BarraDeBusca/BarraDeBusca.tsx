@@ -56,7 +56,7 @@ export function BarraDeBusca({ onBuscar, placeholder = 'Buscar Pokémon...' }: B
           onClick={handleBuscar}
           className="md:hidden bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-full font-semibold transition-colors shadow-md"
         >
-          Entrar
+          Buscar
         </button>
       </div>
     </div>

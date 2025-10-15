@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { buscarTipos } from '../../services/api';
 import { Tipo, TYPE_COLORS } from '../../types/Tipo';
-import { Filter } from 'lucide-react';
+import { Filter, ChevronDown, ChevronUp } from 'lucide-react';
 
 interface FiltroPorTipoProps {
   onFiltrar: (tipo: string) => void;
@@ -18,6 +18,7 @@ export function FiltroPorTipo({ onFiltrar, onLimpar }: FiltroPorTipoProps) {
   const [tipos, setTipos] = useState<Tipo[]>([]);
   const [tipoSelecionado, setTipoSelecionado] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     carregarTipos();
@@ -59,11 +60,21 @@ export function FiltroPorTipo({ onFiltrar, onLimpar }: FiltroPorTipoProps) {
 
   return (
     <div className="w-full">
-      <div className="flex items-center justify-center gap-2 mb-3">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="flex items-center justify-center gap-2 mb-3 w-full md:cursor-default md:pointer-events-none"
+      >
         <Filter className="w-5 h-5 text-gray-600" />
         <h2 className="text-lg font-semibold text-gray-700">Filtrar por Tipo</h2>
-      </div>
-      <div className="flex gap-2 flex-wrap justify-center">
+        <div className="md:hidden">
+          {isOpen ? (
+            <ChevronUp className="w-5 h-5 text-gray-600" />
+          ) : (
+            <ChevronDown className="w-5 h-5 text-gray-600" />
+          )}
+        </div>
+      </button>
+      <div className={`md:flex gap-2 flex-wrap justify-center ${isOpen ? 'flex' : 'hidden'}`}>
         {tipos.map((tipo) => (
           <button
             key={tipo.name}
