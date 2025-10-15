@@ -16,3 +16,4 @@ Uma aplicação React + TypeScript moderna para explorar o mundo dos Pokémon, u
 Desenvolvido por Mayara Monteiro.
 
 🌐 **Acesse :** [Pokédex Lite](https://pokedex-lite-sage.vercel.app/)
+ 
